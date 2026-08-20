@@ -1,0 +1,22 @@
+services:
+  agent:
+    build: ./services/agent
+    container_name: guard-agent
+    networks:
+      - lab_net
+
+  pdf-tool:
+   build: ./services/pdf-tool
+   container_name: guard-pdf-tool
+   networks:
+    - lab_net
+
+  db-tool:
+    build: ./services/db-tool
+    container_name: guard-db-tool
+    networks:
+      - lab_net
+  
+networks:
+    lab_net:
+      driver: bridge
